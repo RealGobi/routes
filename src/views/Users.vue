@@ -21,7 +21,7 @@ computed: {
 
 <style>
 li {
-    list-style: none;
+    cursor: pointer;
 }
 
 </style>

@@ -30,6 +30,21 @@ export default new Vuex.Store({
   getters: {
     users(state){
       return state.users;
+    },
+    getUserById(state){
+      return (userId) => {
+        return state.users.filter(user => user.id == userId);
+      }
+    },
+    getPostsByUserId(state){
+      return (id) => {
+        return state.posts.filter(post => post.userId == id);
+      }
+    },
+    getPostById(state){
+      return (postId) => {
+        return state.posts.filter(post => post.id == postId)[0];
+      }
     }
   }
 })

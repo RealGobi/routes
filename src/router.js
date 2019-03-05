@@ -14,7 +14,14 @@ export default new Router({
         {
           path: 'user/:id',
           name: 'user',
-          component: () => import ('./components/User.vue')
+          component: () => import ('./components/User.vue'),
+          children: [
+            {
+              path: 'post/:postId',
+              name: 'post',
+              component: () => import ('./components/Post.vue')
+            }
+          ]
         }
       ]
     }
